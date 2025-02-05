@@ -12,7 +12,7 @@ body {
 header {
     width: 100%;
     background-color: rgba(23, 23, 23, 0.15);
-    padding: 20px;
+    padding: 15px 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -24,13 +24,13 @@ header .container {
     justify-content: space-between;
     align-items: center;
     max-width: 1180px;
-    margin: auto;
+    margin: 0 auto;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 header a {
     text-decoration: none;
-    margin-right: 20px;
     font-size: 14px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.9);
@@ -45,8 +45,8 @@ nav {
 /* Banner Section */
 .banner-container {
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(rgba(6,72,105,0.849), rgb(3, 96, 133)), url("./Background-image.jpg");
+    min-height: 100vh;
+    background: linear-gradient(rgba(6, 72, 105, 0.849), rgb(3, 96, 133)), url("./Background-image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -102,12 +102,12 @@ nav {
     background-color: white;
     border-radius: 15px;
     padding: 40px;
-    box-shadow: 0 5px 6px rgba(0,0,0,0.219);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.219);
 }
 
 .right-section h4 {
     font-size: 20px;
-    color: rgb(136,136,136);
+    color: rgb(136, 136, 136);
     text-align: center;
     margin-bottom: 30px;
 }
@@ -137,8 +137,8 @@ nav {
     border-bottom: 1px solid #c9c9c98a;
 }
 
-.input-group input:focus ~ label, 
-.input-group input:valid ~ label {
+.input-group input:focus~label,
+.input-group input:valid~label {
     top: -10px;
     font-size: 12px;
     color: var(--primary-color);
@@ -186,9 +186,10 @@ h2 {
 }
 
 .card-container {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     text-align: center;
     background: white;
@@ -254,13 +255,12 @@ footer span {
     }
 
     .section-two {
-        flex-wrap: wrap;
         gap: 20px;
         padding: 20px;
     }
 
     .card-container {
-        width: 90%;
+        max-width: 45%;
     }
 }
 
@@ -272,14 +272,16 @@ footer span {
     }
 
     nav {
-        display: flex;
         flex-direction: column;
         gap: 10px;
     }
 
     .banner-container {
-        height: auto;
-        padding: 50px 20px;
+        padding: 80px 20px 40px;
+    }
+
+    .left-section h1 {
+        font-size: 28px;
     }
 
     .left-section p {
@@ -292,23 +294,15 @@ footer span {
     }
 
     .right-section {
-        padding: 30px;
-    }
-
-    .input-group {
-        width: 100%;
-    }
-
-    .submit-button {
-        width: 100%;
+        padding: 20px;
     }
 
     .section-two {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
     }
 
     .card-container {
-        width: 100%;
+        max-width: 100%;
     }
 }
