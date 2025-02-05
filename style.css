@@ -1,77 +1,90 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-/* Header Start */
+
+/* Header */
 header {
     width: 100%;
     background-color: rgba(23, 23, 23, 0.15);
     padding: 20px;
-    position: absolute;
-    top: 0; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
-    width: 1180px;
+    align-items: center;
+    max-width: 1180px;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 header a {
     text-decoration: none;
-    margin-right: 100px;
+    margin-right: 20px;
     font-size: 14px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.719);
+    color: rgba(255, 255, 255, 0.9);
     font-family: Tahoma;
 }
-/* Header End */
+
+nav {
+    display: flex;
+    gap: 15px;
+}
 
 /* Banner Section */
 .banner-container {
     width: 100%;
     height: 100vh;
     background: linear-gradient(rgba(6,72,105,0.849), rgb(3, 96, 133)), url("./Background-image.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 100px 20px 20px;
 }
-.banner-container .container{
+
+.banner-container .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1180px;
+    gap: 20px;
 }
-/* Banner Section End */
 
 /* Left Section */
 .left-section {
-    width: 600px;
-    align-self: flex-start;
+    flex: 1;
+    max-width: 600px;
 }
-.left-section h1{
-    margin: 0;
+
+.left-section h1 {
     font-size: 40px;
     color: white;
 }
+
 .left-section p {
-    margin: 0;
     font-size: 14px;
-    letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.884);
     margin-top: 18px;
     line-height: 28px;
 }
 
-.left-section button{ 
+.left-section button {
     color: var(--primary-color);
     background-color: white;
     font-weight: bold;
@@ -81,32 +94,28 @@ header a {
     margin-top: 15px;
     cursor: pointer;
 }
-/* Left Section End */
 
-/* Right Section */ 
+/* Right Section */
 .right-section {
-    width: 400px;
+    flex: 1;
+    max-width: 400px;
     background-color: white;
     border-radius: 15px;
-    padding: 40px 0;
+    padding: 40px;
     box-shadow: 0 5px 6px rgba(0,0,0,0.219);
 }
 
 .right-section h4 {
     font-size: 20px;
-    width: 300px;
-    margin: auto;
-    margin-bottom: 30px;
     color: rgb(136,136,136);
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-/* Right End */
-
+/* Form */
 .input-group {
-    width: 300px;
-    margin: 30px auto;  
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
     position: relative;
 }
 
@@ -115,103 +124,191 @@ header a {
     font-size: var(--font-size-14);
     position: absolute;
     top: 10px;
+    left: 10px;
     transition: 0.5s ease-in-out;
 }
 
 .input-group input {
+    width: 100%;
     border: none;
-    padding: 7px;
-    margin-top: 5px;
+    padding: 10px;
     outline: none;
     color: var(--primary-color);
     border-bottom: 1px solid #c9c9c98a;
 }
 
 .input-group input:focus ~ label, 
-.input-group input:valid ~ label{
-    color: var(--primary-color);
+.input-group input:valid ~ label {
     top: -10px;
     font-size: 12px;
+    color: var(--primary-color);
 }
 
-.input-group input:focus ,
-.input-group input:valid  {
-    border-color:var(--primary-color);
-
+.input-group input:focus,
+.input-group input:valid {
+    border-color: var(--primary-color);
 }
+
 .submit-section {
     text-align: center;
 }
 
-.submit-button{
+.submit-button {
     color: white;
     background-color: var(--primary-color);
     border: none;
     padding: 10px;
-    margin-top: 15px;
     border-radius: 5px;
-    width: 300px;
+    width: 100%;
     cursor: pointer;
+    margin-top: 15px;
 }
 
-.submit-button:hover{
+.submit-button:hover {
     box-shadow: 0 3px 6px silver;
 }
 
-
-/* Section-two */
+/* Team Section */
+h2 {
+    font-size: 22px;
+    color: rgb(35, 175, 230);
+    font-weight: bold;
+    text-align: center;
+    margin: 50px 0;
+}
 
 .section-two {
     display: flex;
-    justify-content: space-evenly;
-    height: 100vh;
-    align-items: center;
-    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
 }
-h2{
-    font-size: 22px;
-    color:rgb(35, 175, 230);
-    font-weight: bold;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 0;
-}
+
 .card-container {
-    width: 350px;
+    width: 300px;
     border-radius: 15px;
-    box-shadow: 10px 5px 26px black;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     overflow: hidden;
     text-align: center;
-    margin: 0;
+    background: white;
+    padding-bottom: 15px;
 }
 
 .card-container h1 {
+    font-size: 18px;
     color: rgb(136, 136, 136);
+    margin: 15px 0;
 }
 
 .image-container {
     width: 100%;
-    height: 450px;
+    height: 300px;
     overflow: hidden;
 }
+
 .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-	transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
-.image-container img:hover{
-	transform: scale(1.1)rotate(-5deg);
 
+.image-container img:hover {
+    transform: scale(1.1) rotate(-5deg);
 }
-/* end page two */
 
-footer{
-	text-align: center;
-	color:gray;
+/* Footer */
+footer {
+    text-align: center;
+    color: gray;
     padding: 15px;
+    background: #f8f8f8;
 }
-footer span{
-	color: var(--primary-color);
+
+footer span {
+    color: var(--primary-color);
     font-weight: bold;
+}
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    header .container {
+        width: 90%;
+    }
+
+    .banner-container .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-section,
+    .right-section {
+        max-width: 90%;
+    }
+
+    .left-section h1 {
+        font-size: 32px;
+    }
+
+    .section-two {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .card-container {
+        width: 90%;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .banner-container {
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .left-section p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .left-section button {
+        padding: 10px 40px;
+    }
+
+    .right-section {
+        padding: 30px;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+
+    .section-two {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-container {
+        width: 100%;
+    }
 }
